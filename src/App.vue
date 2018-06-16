@@ -3,26 +3,26 @@
     <NavBar></NavBar>
     <Profile></Profile>
     <Skills></Skills>
+    <Projects></Projects>
+    <About></About>
   </div>
 </template>
 
 <script>
-import project from './models/project.js';
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
+import About from './components/About';
 
 export default {
   name: 'app',
-  data () {
-    return {
-      project,
-    }
-  },
   components: {
     NavBar,
     Profile,
-    Skills
+    Skills,
+    Projects,
+    About
   }
 }
 </script>
@@ -30,7 +30,9 @@ export default {
 <style>
 body {
   margin: 0;
-  padding-bottom: 200px;
+}
+ul {
+	list-style: none;
 }
 section h2 {
 	font-family: 'Lato', sans-serif;

@@ -45,10 +45,10 @@ export default {
 
 <style scoped>
 /* Nav bar */
-#navbar {
+.navbar {
 	border: none;
 }
-#navbar-toggle {
+.navbar-toggle {
 	border: none;
 }
 .navbar {
