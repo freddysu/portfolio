@@ -11,8 +11,8 @@
 				</button>  	
 				<a class="navbar-brand hidden" href="#page-top">Go Top</a>			
 				<ul class="nav navbar-nav navbar-left">
-					<li class="page-scroll">
-						<a href="#page-top">Go Top</a>
+					<li>
+						<a v-scroll-to="'#page-top'">Go Top</a>
 					</li>
 				</ul>
 			</div>
@@ -20,14 +20,14 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="page-scroll">
-						<a href="#skills-title">Skills</a>
+					<li>
+						<a v-scroll-to="'#skills-title'">Skills</a>
 					</li>
-					<li class="page-scroll">
-						<a href="#projects-title">Projects</a>
+					<li>
+						<a v-scroll-to="'#projects-title'">Projects</a>
 					</li>
-					<li class="page-scroll">
-						<a href="#about-title">About</a>
+					<li>
+						<a v-scroll-to="'#about-title'">About</a>
 					</li>
 				</ul>
 			</div>
@@ -60,6 +60,9 @@ export default {
 .navbar-inverse {
 	height: 100px;
 	background-color: #bc1818;
+}
+.nav li {
+	cursor: pointer;
 }
 .nav li:hover {
 	color: #fff;

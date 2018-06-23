@@ -15,7 +15,7 @@
 	  				</div>
 	  				<div class="col-md-10 unselectable">
 		  				<span class="project-name">{{ project.name }}</span>
-		  				<span class="project-tag">{{ project.tag }}</span>
+		  				<span class="project-tag"> - {{ project.tag }}</span>
 		  				<div class="project-description" v-html="project.description + project.achievement"></div>
               <div v-show="project.projectLink" class="pull-right link-div">
 								<a class="project-link" target="_blank" :href="project.projectLink">
