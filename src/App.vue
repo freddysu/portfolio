@@ -40,11 +40,17 @@ section h2 {
 	padding-top: 30px;
 	display: table-cell;
 }
-section h2:after {
+section h4 {
+  display: table-cell;
+}
+section h2:after, section h4:after {
 	content: ' ';
   display: block;
 	border-bottom: 1px solid rgba(0,0,0, 0.3);
 	margin-bottom: 30px;
+}
+section h4:after {
+  border-bottom: 1px solid rgba(0,0,0, 0.2);
 }
 .container {
 	/*padding: 30px 100px;*/

@@ -8,7 +8,7 @@
 				<div class="col-md-7">
 					<div class="text-right text-uppercase">
 						<h1>Yu-Hsuan Su</h1>
-						<h4>Web Developer</h4>
+						<h4>Web / Mobile Developer</h4>
 						<hr>
 					</div>
 					<ul>
