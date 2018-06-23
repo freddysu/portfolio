@@ -29,12 +29,15 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-  				<h3>Self-learning from online courses in my free time. <br> My favorite courses from <a href="https://www.udacity.com/">Udacity</a>:</h3> 
-  				<ul>                      
-					<li>JavaScript Design Patterns</li>
-					<li>Object-Oriented JavaScript</li>
-					<li>Developing Android Apps</li>
-					<li>Software Development Process</li>
+  				<h3>Self-learning from online courses in my free time. <br> My favorite courses from <a href="https://www.udemy.com/">Udemy</a> and <a href="https://www.udacity.com/">Udacity</a>:</h3> 
+  				<ul>
+						<li>Server Side Rendering with React and Redux</li>
+						<li>React 16 - The Complete Guide</li>
+						<li>Vue JS 2 - The Complete Guide</li>
+						<li>JavaScript Design Patterns</li>
+						<li>Object-Oriented JavaScript</li>
+						<li>Developing Android Apps</li>
+						<li>Software Development Process</li>
   				</ul>
 				</div>
 			</div>
