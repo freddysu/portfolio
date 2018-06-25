@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueScrollTo from 'vue-scrollto'
+import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
+import App from './App.vue';
+
 Vue.use(VueScrollTo, {
   duration: 600,
   easing: [.6, .01, .48, .99]

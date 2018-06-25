@@ -1,7 +1,11 @@
 <template>
   <ul id="project-list" class="project-list">
     <li v-for="(project, index) in list" :key="project.name">
-      <div class="row project-row portfolio-link" data-target="#portfolioModal" data-toggle="modal">
+      <div
+        class="row project-row portfolio-link"
+        data-target="#portfolioModal"
+        data-toggle="modal"
+        @click="onOpenModal(project.name)">
         <div class="col-md-2 portfolio-item">
           <img id="project-img" class="portfolio-img img-responsive" :src="require('../assets/' + project.imgSrc + '.png')">
         </div>
@@ -18,13 +22,38 @@
       </div>
       <hr v-show="index !== list.length - 1" />
     </li>
+		<Modal
+      :projectName="projectName"
+      :open="open"
+      @onCloseModal="onCloseModal">
+    </Modal>
   </ul>
 </template>
 
 <script>
+import Modal from './UI/Modal';
+
 export default {
   name: 'ProjectList',
-  props: ['list']
+  props: ['list'],
+	components: {
+		Modal
+	},
+	data() {
+		return {
+      open: false,
+      projectName: '',
+		}
+	},
+	methods: {
+    onOpenModal(name) {
+      this.projectName = name;
+      this.open = true;
+    },
+		onCloseModal(evt) {
+      this.open = false;
+		}
+	}
 }
 </script>
 
