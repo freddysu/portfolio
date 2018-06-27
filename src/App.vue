@@ -5,6 +5,13 @@
     <Skills></Skills>
     <Projects></Projects>
     <About></About>
+    
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+      <a class="back-to-top btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
   </div>
 </template>
 
@@ -55,5 +62,17 @@ section h4:after {
 .container {
 	/*padding: 30px 100px;*/
 	padding: 2% 5%;
+}
+button {
+  pointer-events: none;
+}
+
+@media (max-width:1000px) {
+	.container {
+		padding: 0px 5%;
+	}
+  .back-to-top.btn {
+    margin: 0px;
+  }
 }
 </style>

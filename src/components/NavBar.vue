@@ -72,5 +72,10 @@ export default {
 	-o-transition: all 0.2s ease; 
 	transition: all 0.2s ease;
 }
+@media (max-width:1000px) {
+	#navbar {
+		visibility: hidden;
+	}
+}
 </style>
 

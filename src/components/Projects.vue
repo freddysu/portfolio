@@ -15,17 +15,17 @@
 </template>
 
 <script>
-import ProjectList from './ProjectList';
 import projects from '../models/projects.js';
+import ProjectList from './ProjectList';
 
 export default {
   name: 'Projects',
   components: {
-    ProjectList
+    ProjectList,
   },
   data () {
     return {
-      projects
+      projects,
     }
   }
 }

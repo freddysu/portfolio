@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row">			
 				<div class="col-md-5">
-					<img class="img-responsive portrait " src="../assets/profile-shadow.png" alt="Yu Hsuan Su">
+					<img class="img-responsive portrait " :src="require('../assets/profile-shadow.png')" alt="Yu Hsuan Su">
 				</div>
 				<div class="col-md-7">
 					<div class="text-right text-uppercase">
@@ -135,5 +135,13 @@ a.btn strong {
 	margin-left: 50px; 
 	display: block; 
 	line-height: 36px; 
+}
+@media (max-width:500px) {
+  .btn-links {
+    text-align: center;
+  }
+  .btn-links a.btn {
+    margin: 0 5px 0 0;
+  }
 }
 </style>

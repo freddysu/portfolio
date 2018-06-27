@@ -1,58 +1,83 @@
 <template>
-  <ul id="project-list" class="project-list">
-    <li v-for="(project, index) in list" :key="project.name">
-      <div
-        class="row project-row portfolio-link"
-        data-target="#portfolioModal"
-        data-toggle="modal"
-        @click="onOpenModal(project.name)">
-        <div class="col-md-2 portfolio-item">
-          <img id="project-img" class="portfolio-img img-responsive" :src="require('../assets/' + project.imgSrc + '.png')">
-        </div>
-        <div class="col-md-10 unselectable">
-          <span class="project-name">{{ project.name }}</span>
-          <span class="project-tag"> - {{ project.tag }}</span>
-          <div class="project-description" v-html="project.description + project.achievement"></div>
-          <div v-show="project.projectLink" class="pull-right link-div">
-            <a class="project-link" target="_blank" :href="project.projectLink">
-              <img class="link-img" alt="Android app on Google Play" :src="project.linkImg" />
-            </a>
+  <div>
+    <ul id="project-list" class="project-list">
+      <li v-for="(project, index) in list" :key="project.name">
+        <div
+          class="row project-row portfolio-link"
+          data-target="#portfolioModal"
+          data-toggle="modal"
+          @click="onOpenModal(project.imgSrc)">
+          <div class="col-md-2 portfolio-item">
+            <img
+              id="project-img"
+              class="portfolio-img img-responsive"
+              :src="require('../assets/' + project.imgSrc + '.png')">
+          </div>
+          <div class="col-md-10 unselectable">
+            <span class="project-name">{{ project.name }}</span>
+            <span class="project-tag"> - {{ project.tag }}</span>
+            <div class="project-description" v-html="project.description + project.achievement"></div>
+            <div v-show="project.projectLink" class="pull-right link-div">
+              <a class="project-link" target="_blank" :href="project.projectLink">
+                <img class="link-img" alt="Android app on Google Play" :src="project.linkImg" />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <hr v-show="index !== list.length - 1" />
-    </li>
-		<Modal
-      :projectName="projectName"
-      :open="open"
+        <hr v-show="index !== list.length - 1" />
+      </li>
+    </ul>
+    <Modal
+      v-if="open"
       @onCloseModal="onCloseModal">
+      <carousel
+        :perPage="1"
+        :paginationActiveColor="'white'"
+        :paginationColor="'#999'"
+        :paginationSize="20">
+        <slide v-for="idx in 5" :key="idx">
+          <div class="slide-wrap">
+            <img :src="getImg(idx)" />
+          </div>
+        </slide>
+      </carousel>
     </Modal>
-  </ul>
+  </div>
 </template>
 
 <script>
 import Modal from './UI/Modal';
+import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: 'ProjectList',
   props: ['list'],
-	components: {
-		Modal
-	},
-	data() {
-		return {
+  components: {
+    Modal,
+    Carousel,
+    Slide
+  },
+  data() {
+    return {
       open: false,
-      projectName: '',
-		}
-	},
+      imgSrc: null
+    }
+  },
 	methods: {
-    onOpenModal(name) {
-      this.projectName = name;
+    onOpenModal(imgSrc) {
+      this.imgSrc = imgSrc;
       this.open = true;
     },
 		onCloseModal(evt) {
+      this.imgSrc = null;
       this.open = false;
-		}
+    },
+    getImg(index) {
+      if (!this.imgSrc) {
+        return null;
+      }
+      return require('../assets/' + this.imgSrc + (index-1) + '.jpg');
+    }
 	}
 }
 </script>
@@ -147,5 +172,21 @@ export default {
 	padding-left: 20px;
 	list-style: disc;
 	color: #444;
+}
+.slide-wrap {
+  width: 100%;
+  height: 512px;
+}
+.slide-wrap img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width:1000px) {
+	#project-list {
+    padding-left: 0px;
+  }
+  .portfolio-img {
+    margin: 0 auto;
+  }
 }
 </style>

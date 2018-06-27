@@ -1,5 +1,5 @@
 <template>
-  <div :class="'overlay' + (open ? ' overlay-open' : '')" @click="onCloseModal">
+  <div class="overlay" @click="onCloseModal">
     <div class="modal-container" @click.stop>
       <slot></slot>
     </div>
@@ -10,7 +10,6 @@
 
 export default {
   name: 'Modal',
-  props: ['open'],
   methods: {
     onCloseModal() {
       this.$emit('onCloseModal');
@@ -27,13 +26,9 @@ export default {
   bottom: 0;
   left: 0;
   z-index: 1050;
-  opacity: 0;
-  pointer-events: none;
-  background: rgba(0, 0, 0, 0.75);
-}
-.overlay-open {
   opacity: 1;
   pointer-events: auto;
+  background: rgba(0, 0, 0, 0.75);
 }
 .modal-container {
   position: relative;
@@ -41,6 +36,6 @@ export default {
   margin: 0 auto;
   width: 80%;
   height: 80%;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>
