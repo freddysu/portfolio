@@ -6,7 +6,7 @@
           class="row project-row portfolio-link"
           data-target="#portfolioModal"
           data-toggle="modal"
-          @click="onOpenModal(project.imgSrc)">
+          @click="onOpenModal(project.imgSrc, project.orientation, project.numOfImg)">
           <div class="col-md-2 portfolio-item">
             <img
               id="project-img"
@@ -40,9 +40,9 @@
         :paginationActiveColor="'white'"
         :paginationColor="'#999'"
         :paginationSize="20">
-        <slide v-for="idx in 5" :key="idx">
+        <slide v-for="idx in numOfImg" :key="idx">
           <div class="slide-wrap">
-            <img :src="getImg(idx)" />
+            <img :class="orientation" :src="getImg(idx)" />
           </div>
         </slide>
       </carousel>
@@ -65,11 +65,15 @@ export default {
   data() {
     return {
       open: false,
-      imgSrc: null
+      imgSrc: null,
+      orientation: 'landscape',
+      numOfImg: 5
     }
   },
 	methods: {
-    onOpenModal(imgSrc) {
+    onOpenModal(imgSrc, orientation, numOfImg) {
+      this.numOfImg = numOfImg
+      this.orientation = orientation;
       this.imgSrc = imgSrc;
       this.open = true;
     },
@@ -186,10 +190,15 @@ export default {
 .slide-wrap {
   width: 100%;
   height: 512px;
+  text-align: center;
 }
-.slide-wrap img {
+.slide-wrap img.landscape {
   width: 100%;
   height: auto;
+}
+.slide-wrap img.portrait {
+  width: auto;
+  height: 100%;
 }
 @media (max-width:1000px) {
 	#project-list {
