@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <hr v-show="index !== list.length - 1" />
+        <hr v-show="!(noLastLine && index === list.length - 1)" />
       </li>
     </ul>
     <Modal
@@ -56,7 +56,7 @@ import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: 'ProjectList',
-  props: ['list'],
+  props: ['list', 'noLastLine'],
   components: {
     Modal,
     Carousel,

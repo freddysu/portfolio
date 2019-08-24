@@ -12,7 +12,7 @@
       <h4 class="subtitle">WORK PROJECTS</h4>
       <ProjectList :list="projects.work" />
       <h4 class="subtitle">SCHOOL PROJECTS</h4>
-      <ProjectList :list="projects.school" />
+      <ProjectList :list="projects.school" :noLastLine="true" />
 		</div>
 	</section>
 </template>
@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 .subtitle {
-  padding-left: 30px;
+  padding-left: 40px;
   padding-top: 10px;
   padding-bottom: 15px;
   color: #999;
