@@ -17,9 +17,14 @@
             <span class="project-name">{{ project.name }}</span>
             <span class="project-tag"> - {{ project.tag }}</span>
             <div class="project-description" v-html="project.description + project.achievement"></div>
-            <div v-show="project.projectLink" class="pull-right link-div">
-              <a class="project-link" target="_blank" :href="project.projectLink">
-                <img class="link-img" alt="Android app on Google Play" :src="project.linkImg" />
+            <div v-show="project.androidLink" class="pull-right link-div">
+              <a class="project-link" target="_blank" :href="project.androidLink">
+                <img class="link-img" alt="Android app on Google Play" :src="require('../assets/google_play.png')" />
+              </a>
+            </div>
+            <div v-show="project.iOSLink" class="pull-right link-div">
+              <a class="project-link" target="_blank" :href="project.iOSLink">
+                <img class="link-img" alt="iOS app on App Store" :src="require('../assets/app_store.png')" />
               </a>
             </div>
           </div>
@@ -98,7 +103,7 @@ export default {
 	margin-top: 20px;
   pointer-events: none;
 }
-.portfolio-link:focus{
+.portfolio-link:focus {
 	outline: none;
 }
 .project-link {
@@ -107,6 +112,11 @@ export default {
 .project-link:hover {
 	opacity: 0.7;
 	filter: alpha(opacity=70);
+}
+.project-link .link-img {
+  width: 142px;
+  height: 45px;
+  margin-left: 15px;
 }
 .portfolio-item {
 	right: 0;

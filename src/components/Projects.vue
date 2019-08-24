@@ -7,6 +7,9 @@
 					<h2 id="projects-title">Projects</h2>
 				</div>
 			</div>
+      <h4 class="subtitle">PERSONAL PROJECTS</h4>
+      <ProjectList :list="projects.personal" />
+      <h4 class="subtitle">WORK PROJECTS</h4>
       <ProjectList :list="projects.work" />
       <h4 class="subtitle">SCHOOL PROJECTS</h4>
       <ProjectList :list="projects.school" />
@@ -34,8 +37,9 @@ export default {
 <style scoped>
 .subtitle {
   padding-left: 30px;
-  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
   color: #999;
-  font-size: 24px;
+  font-size: 22px;
 }
 </style>
