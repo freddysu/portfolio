@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: `/portfolio/`,
+    publicPath: process.env.NODE_ENV === 'production' ? `/portfolio/` : '/',
     filename: 'build.js'
   },
   module: {
@@ -53,7 +53,6 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     noInfo: true,
     overlay: true
