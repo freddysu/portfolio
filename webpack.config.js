@@ -2,13 +2,14 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { name } = require('./package.json');
+const CopyPlugin = require('copy-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: `/${name}/`,
+    publicPath: `/portfolio/`,
     filename: 'build.js'
   },
   module: {
@@ -42,6 +43,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
@@ -49,9 +53,13 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     noInfo: true,
     overlay: true
+  },
+  optimization: {
+    minimize: process.env.NODE_ENV === 'production'
   },
   performance: {
     hints: false
@@ -69,16 +77,13 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new CleanWebpackPlugin(),
+    new CopyPlugin([{
+      from: 'libs', to: 'libs', toType: 'dir'
+    }]),
     new HtmlWebpackPlugin({
       inject: false,
       filename: 'index.html',
       template: path.resolve('index.html'),
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
