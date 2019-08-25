@@ -1,11 +1,14 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { name } = require('./package.json');
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: `/${name}/`,
     filename: 'build.js'
   },
   module: {
@@ -34,7 +37,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: 'assets/[name].[ext]?[hash]'
         }
       }
     ]
@@ -64,6 +67,12 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"'
       }
+    }),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: 'index.html',
+      template: path.resolve('index.html'),
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
