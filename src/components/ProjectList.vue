@@ -18,12 +18,12 @@
             <span class="project-tag"> - {{ project.tag }}</span>
             <div class="project-description" v-html="project.description + project.achievement"></div>
             <div v-show="project.androidLink" class="pull-right link-div">
-              <a class="project-link" target="_blank" :href="project.androidLink">
+              <a class="project-link" @click.stop target="_blank" :href="project.androidLink">
                 <img class="link-img" alt="Android app on Google Play" :src="require('../assets/google_play.png')" />
               </a>
             </div>
             <div v-show="project.iOSLink" class="pull-right link-div">
-              <a class="project-link" target="_blank" :href="project.iOSLink">
+              <a class="project-link" @click.stop target="_blank" :href="project.iOSLink">
                 <img class="link-img" alt="iOS app on App Store" :src="require('../assets/app_store.png')" />
               </a>
             </div>
