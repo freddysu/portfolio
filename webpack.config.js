@@ -78,7 +78,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new CleanWebpackPlugin(),
     new CopyPlugin([{
-      from: 'libs', to: 'libs', toType: 'dir'
+      from: 'public/libs', to: 'public/libs', toType: 'dir'
     }]),
     new HtmlWebpackPlugin({
       inject: false,
