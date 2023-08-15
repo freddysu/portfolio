@@ -36,9 +36,11 @@
             <a href="https://www.udacity.com/">Udacity</a>:
           </h3>
           <ul>
+            <li>Cypress - Modern Automation Testing from Scratch + Frameworks</li>
+            <li>GraphQL with React: The Complete Developers Guide</li>
+            <li>Understanding TypeScript</li>
+            <li>AWS Serverless APIs & Apps - A Complete Introduction</li>
             <li>Server Side Rendering with React and Redux</li>
-            <li>React 16 - The Complete Guide</li>
-            <li>Vue JS 2 - The Complete Guide</li>
             <li>JavaScript Design Patterns</li>
             <li>Object-Oriented JavaScript</li>
             <li>Software Development Process</li>

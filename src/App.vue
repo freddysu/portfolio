@@ -5,7 +5,7 @@
     <Skills></Skills>
     <Projects></Projects>
     <About></About>
-    
+
     <div class="scroll-top page-scroll visible-xs visible-sm">
       <a class="back-to-top btn btn-primary" href="#page-top">
         <i class="fa fa-chevron-up"></i>

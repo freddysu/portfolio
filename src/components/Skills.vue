@@ -12,16 +12,16 @@
           <h3>Frontend</h3>
           <ul>
             <li>
-              <span>Web: React / Redux, VueJS / Vuex</span>
+              <span>Web: React / Redux / Apollo, VueJS / Vuex</span>
             </li>
             <li>
               <span>Mobile (hybrid): Cordova, Framework7, Quasar</span>
             </li>
             <li>
-              <span>Build Tools: NPM scripts, Webpack</span>
+              <span>Build Tools: NPM scripts, Webpack, Buildkite</span>
             </li>
             <li>
-              <span>Testing: Jest, Mocha, Cucumber, Calabash</span>
+              <span>Testing: Cypress, Jest, React Testing Library, Enzyme</span>
             </li>
             <li>
               <span>GraphQL, RESTful, WebSocket</span>
@@ -35,13 +35,13 @@
           <h3>Programming languages</h3>
           <ul>
             <li>
-              <span>JavaScript</span>
+              <span>TypeScript</span>
+            </li>
+            <li>
+              <span>JavaScript (ES6)</span>
             </li>
             <li>
               <span>Java</span>
-            </li>
-            <li>
-              <span>PHP</span>
             </li>
           </ul>
         </div>
@@ -51,13 +51,13 @@
           <h3>Backend</h3>
           <ul>
             <li>
-              <span>NodeJS, Laravel</span>
+              <span>NodeJS, Apollo</span>
             </li>
             <li>
-              <span>MongoDB, PostgreSQL, MySQL</span>
+              <span>PostgreSQL, MongoDB , MySQL</span>
             </li>
             <li>
-              <span>AWS (EC2, S3, CloudFront)</span>
+              <span>AWS (EC2, S3, CloudFront, CloudWatch, Lambda), Serverless</span>
             </li>
           </ul>
         </div>
@@ -72,6 +72,9 @@
             </li>
             <li>
               <span>Design patterns & clean code</span>
+            </li>
+            <li>
+              <span>Google Analytics, Google Tag Manager, Tealium</span>
             </li>
             <li>
               <span>MacOS, Linux</span>
@@ -91,12 +94,15 @@
 h3 {
   font-size: 28px;
 }
+
 ul {
   padding-left: 0;
 }
+
 li {
   margin: 5px 0;
 }
+
 li span {
   font-size: 18px;
   color: #676767;
